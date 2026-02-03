@@ -12,25 +12,25 @@ const LIVE2D_MODELS = [
   {
     id: 'wanko',
     name: 'Wanko (わんこ)',
-    path: 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display@test/assets/three/three.model.json',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json',
     scale: 0.2,
   },
   {
     id: 'haru',
     name: 'Haru (春)',
-    path: 'https://cdn.jsdelivr.net/gh/guansss/pixi-live2d-display@master/test/assets/haru/haru_greeter_t03.model3.json',
-    scale: 0.12,
-  },
-  {
-    id: 'hiyori',
-    name: 'Hiyori (日和)',
-    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-hiyori@1.0.5/assets/hiyori.model.json',
+    path: '/models/haru/haru_greeter_t03.model3.json',
     scale: 0.15,
   },
   {
-    id: 'izumi',
-    name: 'Izumi (いずみ)',
-    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-izumi@1.0.5/assets/izumi.model.json',
+    id: 'hiro',
+    name: 'Hiro (ヒロ)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'koharu',
+    name: 'Koharu (こはる)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
     scale: 0.15,
   },
 ];
