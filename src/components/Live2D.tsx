@@ -1,30 +1,30 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './Live2D.module.css';
 
-// 可用的 Live2D 模型列表 - 使用 cdn.jsdelivr.net 避免 CORS 问题
+// 可用的 Live2D 模型列表 - 全部为女性角色 - 使用 cdn.jsdelivr.net 避免 CORS 问题
 const LIVE2D_MODELS = [
   // ========== 可爱少女系 ==========
   {
     id: 'shizuku',
-    name: 'Shizuku (しずく)',
+    name: 'Shizuku (しずく・水滴)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json',
     scale: 0.15,
   },
   {
     id: 'wanko',
-    name: 'Wanko (わんこ・猫耳)',
+    name: 'Wanko (わんこ・猫耳少女)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json',
     scale: 0.2,
   },
   {
     id: 'koharu',
-    name: 'Koharu (こはる)',
+    name: 'Koharu (こはる・春)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
     scale: 0.15,
   },
   {
     id: 'chitose',
-    name: 'Chitose (ちとせ)',
+    name: 'Chitose (ちとせ・千歳)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json',
     scale: 0.15,
   },
@@ -70,18 +70,12 @@ const LIVE2D_MODELS = [
   // ========== 兽娘猫耳系 ==========
   {
     id: 'tsumiki',
-    name: 'Tsumiki (ツミキ)',
+    name: 'Tsumiki (ツミキ・積木)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json',
     scale: 0.15,
   },
-  {
-    id: 'haruto',
-    name: 'Haruto (ハルト・少年)',
-    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json',
-    scale: 0.15,
-  },
 
-  // ========== 其他角色 ==========
+  // ========== 歌姬偶像系 ==========
   {
     id: 'nico',
     name: 'Nico (ニコ・歌姫)',
@@ -90,16 +84,48 @@ const LIVE2D_MODELS = [
   },
   {
     id: 'miku',
-    name: 'Miku (ミク・初音)',
+    name: 'Miku (ミク・初音未来)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-miku@1.0.5/assets/miku.model.json',
     scale: 0.15,
   },
 
-  // ========== 本地模型 ==========
+  // ========== 动漫角色系 ==========
   {
-    id: 'haru-local',
-    name: 'Haru (春・Local)',
-    path: '/models/haru/haru_greeter_t03.model3.json',
+    id: 'umaru',
+    name: 'Umaru (ウルル・干物妹)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-umaru@2.0.0/assets/umaru.model.json',
+    scale: 0.18,
+  },
+  {
+    id: 'rem',
+    name: 'Rem (レム・Re:Zero)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-rem@1.0.1/assets/rem.model.json',
+    scale: 0.15,
+  },
+
+  // ========== 其他美少女 ==========
+  {
+    id: 'z16',
+    name: 'Z16 (美少女)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-z16@1.0.5/assets/z16.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'ni-j',
+    name: 'Ni-J (ニジ・虹色)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-ni-j@1.0.5/assets/ni-j.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'nipsilon',
+    name: 'Nipsilon (ニプシロン)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-nipsilon@1.0.5/assets/nipsilon.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'nito',
+    name: 'Nito (ニト・仁人)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-nito@1.0.5/assets/nito.model.json',
     scale: 0.15,
   },
 ];
