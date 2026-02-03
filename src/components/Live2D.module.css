@@ -153,6 +153,43 @@
   margin: 20px;
 }
 
+.modelButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.modelButton:disabled:hover {
+  transform: none;
+  border-color: #ffd1e8;
+  color: #666;
+}
+
+.controlButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.controlButton:disabled:hover {
+  transform: none;
+}
+
+.changingIndicator {
+  text-align: center;
+  color: #ff6b9d;
+  font-size: 12px;
+  margin-top: 10px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
 /* 模型信息 */
 .live2dInfo {
   text-align: center;

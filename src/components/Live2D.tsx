@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './Live2D.module.css';
 
 // 可用的 Live2D 模型列表
@@ -39,15 +39,15 @@ export function Live2D() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [currentModelIndex, setCurrentModelIndex] = useState(0);
+  const [isChanging, setIsChanging] = useState(false);
+  const oml2dInstanceRef = useRef<any>(null);
 
   useEffect(() => {
-    let oml2dInstance: any = null;
-
     const loadLive2D = async () => {
       try {
         const { loadOml2d } = await import('oh-my-live2d');
 
-        oml2dInstance = await loadOml2d({
+        oml2dInstanceRef.current = await loadOml2d({
           dockedPosition: 'right',
           mobileDisplay: true,
           primaryColor: '#ff6b9d',
@@ -71,18 +71,34 @@ export function Live2D() {
     loadLive2D();
 
     return () => {
-      if (oml2dInstance) {
-        oml2dInstance.destroy();
+      if (oml2dInstanceRef.current) {
+        oml2dInstanceRef.current.destroy();
       }
     };
   }, []);
 
+  const changeModel = async (index: number) => {
+    if (!oml2dInstanceRef.current || isChanging) return;
+
+    setIsChanging(true);
+    try {
+      await oml2dInstanceRef.current.loadModelByIndex(index);
+      setCurrentModelIndex(index);
+    } catch (err) {
+      console.error('模型切换失败:', err);
+    } finally {
+      setIsChanging(false);
+    }
+  };
+
   const nextModel = () => {
-    setCurrentModelIndex((prev) => (prev + 1) % LIVE2D_MODELS.length);
+    const nextIndex = (currentModelIndex + 1) % LIVE2D_MODELS.length;
+    changeModel(nextIndex);
   };
 
   const prevModel = () => {
-    setCurrentModelIndex((prev) => (prev - 1 + LIVE2D_MODELS.length) % LIVE2D_MODELS.length);
+    const prevIndex = (currentModelIndex - 1 + LIVE2D_MODELS.length) % LIVE2D_MODELS.length;
+    changeModel(prevIndex);
   };
 
   return (
@@ -97,23 +113,29 @@ export function Live2D() {
             <button
               key={model.id}
               className={`${styles.modelButton} ${index === currentModelIndex ? styles.modelButtonActive : ''}`}
-              onClick={() => setCurrentModelIndex(index)}
+              onClick={() => changeModel(index)}
+              disabled={isChanging}
             >
               {model.name}
             </button>
           ))}
         </div>
         <div className={styles.modelControls}>
-          <button className={styles.controlButton} onClick={prevModel}>
+          <button className={styles.controlButton} onClick={prevModel} disabled={isChanging}>
             ← 上一个
           </button>
           <span className={styles.modelCounter}>
             {currentModelIndex + 1} / {LIVE2D_MODELS.length}
           </span>
-          <button className={styles.controlButton} onClick={nextModel}>
+          <button className={styles.controlButton} onClick={nextModel} disabled={isChanging}>
             下一个 →
           </button>
         </div>
+        {isChanging && (
+          <div className={styles.changingIndicator}>
+            模型切换中...
+          </div>
+        )}
       </div>
 
       {/* 加载状态 */}
