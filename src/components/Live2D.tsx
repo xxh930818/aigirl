@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import styles from './Live2D.module.css';
 
-// 可用的 Live2D 模型列表
+// 可用的 Live2D 模型列表 - 使用 cdn.jsdelivr.net 避免 CORS 问题
 const LIVE2D_MODELS = [
   // ========== 可爱少女系 ==========
   {
@@ -20,18 +20,6 @@ const LIVE2D_MODELS = [
     id: 'koharu',
     name: 'Koharu (こはる)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
-    scale: 0.15,
-  },
-  {
-    id: 'haru01',
-    name: 'Haru 01 (春)',
-    path: 'https://unpkg.com/live2d-widget-model-haru@1.0.5/assets/haru/01.model.json',
-    scale: 0.15,
-  },
-  {
-    id: 'haru02',
-    name: 'Haru 02 (春・私服)',
-    path: 'https://unpkg.com/live2d-widget-model-haru@1.0.5/assets/haru/02.model.json',
     scale: 0.15,
   },
 
@@ -61,30 +49,10 @@ const LIVE2D_MODELS = [
     scale: 0.12,
   },
 
-  // ========== 其他角色 ==========
-  {
-    id: 'miku',
-    name: 'Miku (ミク)',
-    path: 'https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json',
-    scale: 0.15,
-  },
-  {
-    id: 'nico',
-    name: 'Nico (ニコ)',
-    path: 'https://unpkg.com/live2d-widget-model-nico@1.0.5/assets/nico.model.json',
-    scale: 0.15,
-  },
-  {
-    id: 'z16',
-    name: 'Z16 ( Zone-16)',
-    path: 'https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json',
-    scale: 0.12,
-  },
-
   // ========== 本地模型 ==========
   {
     id: 'haru-local',
-    name: 'Haru (Local)',
+    name: 'Haru (春・Local)',
     path: '/models/haru/haru_greeter_t03.model3.json',
     scale: 0.15,
   },
