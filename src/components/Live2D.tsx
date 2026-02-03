@@ -22,6 +22,18 @@ const LIVE2D_MODELS = [
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
     scale: 0.15,
   },
+  {
+    id: 'chitose',
+    name: 'Chitose (ちとせ)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-chitose@1.0.5/assets/chitose.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'unitychan',
+    name: 'Unitychan (ユニちゃん)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-unitychan@1.0.5/assets/unitychan.model.json',
+    scale: 0.2,
+  },
 
   // ========== 成熟人妻系 ==========
   {
@@ -47,6 +59,26 @@ const LIVE2D_MODELS = [
     name: 'Tororo (トラロロ)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json',
     scale: 0.12,
+  },
+
+  // ========== 其他美少女 ==========
+  {
+    id: 'nico',
+    name: 'Nico (ニコ・歌姫)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-nico@1.0.5/assets/nico.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'remu',
+    name: 'Remu (レム)',
+    path: 'https://cdn.jsdelivr.net/npm/@neowaifu/live2d-widget-model-remu@1.0.0/assets/remu.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'haruto',
+    name: 'Haruto (ハルト)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json',
+    scale: 0.15,
   },
 
   // ========== 本地模型 ==========
