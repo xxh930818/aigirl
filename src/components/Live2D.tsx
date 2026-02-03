@@ -12,7 +12,7 @@ const LIVE2D_MODELS = [
   },
   {
     id: 'wanko',
-    name: 'Wanko (わんこ)',
+    name: 'Wanko (わんこ・猫耳)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json',
     scale: 0.2,
   },
@@ -33,6 +33,12 @@ const LIVE2D_MODELS = [
     name: 'Unitychan (ユニちゃん)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-unitychan@1.0.5/assets/unitychan.model.json',
     scale: 0.2,
+  },
+  {
+    id: 'epsilon',
+    name: 'Epsilon 2.1 (エプシロン)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-epsilon2_1@1.0.5/assets/Epsilon2.1.model.json',
+    scale: 0.15,
   },
 
   // ========== 成熟人妻系 ==========
@@ -61,7 +67,21 @@ const LIVE2D_MODELS = [
     scale: 0.12,
   },
 
-  // ========== 其他美少女 ==========
+  // ========== 兽娘猫耳系 ==========
+  {
+    id: 'tsumiki',
+    name: 'Tsumiki (ツミキ)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-tsumiki@1.0.5/assets/tsumiki.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'haruto',
+    name: 'Haruto (ハルト・少年)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json',
+    scale: 0.15,
+  },
+
+  // ========== 其他角色 ==========
   {
     id: 'nico',
     name: 'Nico (ニコ・歌姫)',
@@ -69,15 +89,9 @@ const LIVE2D_MODELS = [
     scale: 0.15,
   },
   {
-    id: 'remu',
-    name: 'Remu (レム)',
-    path: 'https://cdn.jsdelivr.net/npm/@neowaifu/live2d-widget-model-remu@1.0.0/assets/remu.model.json',
-    scale: 0.15,
-  },
-  {
-    id: 'haruto',
-    name: 'Haruto (ハルト)',
-    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json',
+    id: 'miku',
+    name: 'Miku (ミク・初音)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-miku@1.0.5/assets/miku.model.json',
     scale: 0.15,
   },
 
