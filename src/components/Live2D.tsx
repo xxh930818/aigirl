@@ -3,6 +3,7 @@ import styles from './Live2D.module.css';
 
 // 可用的 Live2D 模型列表
 const LIVE2D_MODELS = [
+  // ========== 可爱少女系 ==========
   {
     id: 'shizuku',
     name: 'Shizuku (しずく)',
@@ -16,21 +17,75 @@ const LIVE2D_MODELS = [
     scale: 0.2,
   },
   {
-    id: 'haru',
-    name: 'Haru (春)',
-    path: '/models/haru/haru_greeter_t03.model3.json',
+    id: 'koharu',
+    name: 'Koharu (こはる)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
     scale: 0.15,
   },
   {
-    id: 'hiro',
-    name: 'Hiro (ヒロ)',
+    id: 'haru01',
+    name: 'Haru 01 (春)',
+    path: 'https://unpkg.com/live2d-widget-model-haru@1.0.5/assets/haru/01.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'haru02',
+    name: 'Haru 02 (春・私服)',
+    path: 'https://unpkg.com/live2d-widget-model-haru@1.0.5/assets/haru/02.model.json',
+    scale: 0.15,
+  },
+
+  // ========== 成熟人妻系 ==========
+  {
+    id: 'hibiki',
+    name: 'Hibiki (響・お姉様)',
     path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-hibiki@1.0.5/assets/hibiki.model.json',
     scale: 0.15,
   },
   {
-    id: 'koharu',
-    name: 'Koharu (こはる)',
-    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json',
+    id: 'izumi',
+    name: 'Izumi (いずみ・人妻)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-izumi@1.0.5/assets/izumi.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'hijiki',
+    name: 'Hijiki (ひじき・奥さん)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-hijiki@1.0.5/assets/hijiki.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'tororo',
+    name: 'Tororo (トラロロ)',
+    path: 'https://cdn.jsdelivr.net/npm/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json',
+    scale: 0.12,
+  },
+
+  // ========== 其他角色 ==========
+  {
+    id: 'miku',
+    name: 'Miku (ミク)',
+    path: 'https://unpkg.com/live2d-widget-model-miku@1.0.5/assets/miku.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'nico',
+    name: 'Nico (ニコ)',
+    path: 'https://unpkg.com/live2d-widget-model-nico@1.0.5/assets/nico.model.json',
+    scale: 0.15,
+  },
+  {
+    id: 'z16',
+    name: 'Z16 ( Zone-16)',
+    path: 'https://unpkg.com/live2d-widget-model-z16@1.0.5/assets/z16.model.json',
+    scale: 0.12,
+  },
+
+  // ========== 本地模型 ==========
+  {
+    id: 'haru-local',
+    name: 'Haru (Local)',
+    path: '/models/haru/haru_greeter_t03.model3.json',
     scale: 0.15,
   },
 ];
