@@ -31,7 +31,6 @@ export function Live2D() {
 
         // 加载 Live2D 插件
         const { Live2DModel } = await import('pixi-live2d-display');
-        await Live2DModel.glow;
 
         // 加载 Haru 模型
         try {
