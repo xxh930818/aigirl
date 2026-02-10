@@ -5,14 +5,33 @@ function App() {
   return (
     <div className={styles.app}>
       <header className={styles.appHeader}>
-        <h1>AI Girl</h1>
-        <p>美少女 Live2D 展示</p>
+        <h1>AI Girl Gallery</h1>
+        <p className={styles.tagline}>美少女 Live2D 展示馆</p>
+        <span className={styles.badge}>✨ Powered by Live2D Cubism</span>
       </header>
+
+      {/* Statistics Section */}
+      <div className={styles.stats}>
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>19+</div>
+          <div className={styles.statLabel}>美少女模型</div>
+        </div>
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>6</div>
+          <div className={styles.statLabel}>角色类型</div>
+        </div>
+        <div className={styles.statItem}>
+          <div className={styles.statValue}>100%</div>
+          <div className={styles.statLabel}>免费开源</div>
+        </div>
+      </div>
+
       <main className={styles.appMain}>
         <Live2D />
       </main>
+
       <footer className={styles.appFooter}>
-        <p>请将 Live2D 模型文件放在 public/models 目录下</p>
+        <p>Models from GitHub open source community • Built with React + Live2D</p>
       </footer>
     </div>
   );

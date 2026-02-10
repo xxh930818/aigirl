@@ -1,38 +1,235 @@
+/* ============ Global App Layout ============ */
 .app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(135deg, #ffeef8 0%, #e8f4ff 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
+/* ============ Hero Section ============ */
 .appHeader {
   text-align: center;
-  padding: 40px 20px 20px;
+  padding: 60px 20px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.appHeader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .appHeader h1 {
-  font-size: 3rem;
-  color: #ff6b9d;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(255, 107, 157, 0.2);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #ffd1e8 50%, #fff 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+  text-shadow: 0 4px 30px rgba(255, 255, 255, 0.3);
+  animation: shimmer 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
 }
 
-.appHeader p {
-  font-size: 1.2rem;
-  color: #666;
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 0% center;
+  }
+  50% {
+    background-position: 200% center;
+  }
 }
 
+.appHeader .tagline {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.appHeader .badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+  animation: float 3s ease-in-out infinite;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ============ Statistics Section ============ */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.statItem {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  min-width: 120px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.statItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #ffd1e8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.statLabel {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============ Main Content ============ */
 .appMain {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
+  position: relative;
+  z-index: 1;
 }
 
+/* ============ Footer ============ */
 .appFooter {
   text-align: center;
   padding: 20px;
-  color: #999;
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============ Decorative Elements ============ */
+.app::before,
+.app::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.app::before {
+  width: 400px;
+  height: 400px;
+  background: #ff6b9d;
+  top: -100px;
+  right: -100px;
+  animation: blob 7s ease-in-out infinite;
+}
+
+.app::after {
+  width: 300px;
+  height: 300px;
+  background: #c44569;
+  bottom: -50px;
+  left: -50px;
+  animation: blob 9s ease-in-out infinite reverse;
+}
+
+@keyframes blob {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ============ Responsive Design ============ */
+@media (max-width: 768px) {
+  .appHeader {
+    padding: 40px 20px 30px;
+  }
+
+  .appHeader h1 {
+    font-size: 2rem;
+  }
+
+  .appHeader .tagline {
+    font-size: 1rem;
+  }
+
+  .stats {
+    gap: 15px;
+  }
+
+  .statItem {
+    padding: 15px 20px;
+    min-width: 100px;
+  }
+
+  .statValue {
+    font-size: 2rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
 }

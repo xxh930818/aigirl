@@ -145,7 +145,7 @@ export function Live2D() {
         oml2dInstanceRef.current = await loadOml2d({
           dockedPosition: 'right',
           mobileDisplay: true,
-          primaryColor: '#ff6b9d',
+          primaryColor: '#667eea',
           models: LIVE2D_MODELS.map((model) => ({
             name: model.id,
             path: model.path,
@@ -201,7 +201,8 @@ export function Live2D() {
       {/* 模型控制面板 */}
       <div className={styles.modelSelector}>
         <div className={styles.modelSelectorHeader}>
-          <h3>👧 角色选择</h3>
+          <h3>✨ 角色选择</h3>
+          <p className={styles.subtitle}>19位美少女角色等你来探索</p>
         </div>
         <div className={styles.modelList}>
           {LIVE2D_MODELS.map((model, index) => (
@@ -211,7 +212,7 @@ export function Live2D() {
               onClick={() => changeModel(index)}
               disabled={isChanging}
             >
-              {model.name}
+              <span>{model.name}</span>
             </button>
           ))}
         </div>
